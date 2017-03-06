@@ -1,0 +1,20 @@
+<template name="layout">
+	<main id="interface" class="{{ state }}">
+		{{> header}}
+		{{> welcome}}
+
+		{{#if $eq state "recipe"}}
+			{{> recipe}}
+		{{/if}}
+
+		{{#if $eq state "thanks"}}
+			{{> thanks}}
+		{{/if}}
+		<!-- {{> catalog}} -->
+		<!-- {{> spouts}} -->
+		<!-- {{> actions}} -->
+		<!-- {{#if $eq state "payment"}}
+			{{>payment}}
+		{{/if}} -->
+	</main>
+</template>

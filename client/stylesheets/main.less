@@ -1,0 +1,445 @@
+@import 'mixins';
+@import 'variables';
+
+/*------------------------------
+		MAIN STYLES & RESETS
+		------------------------------*/
+
+		*{box-sizing: border-box;}
+		html{
+			font-size: @baseline;
+			font-family: @sans-serif;
+			a, a:visited, a:hover{
+				text-decoration: none;
+				color: inherit;
+			}
+		}
+
+/*------------------------------
+		APP STYLES
+		------------------------------*/
+
+		body{
+
+
+			#interface{
+				background: @dark-grey;
+				.flex( @wrap: wrap;);
+				position: fixed;
+				top: 0 ; left: 0; right: 0; bottom: 0;
+				height: 100vh;
+				width: 100vw;
+				overflow: hidden;
+				&.payment{
+					#header, #catalog, #spouts, #actions{
+						filter: blur(20px);
+					}
+				}
+
+
+/*------------------------------
+		HEADER STYLES
+		------------------------------*/
+
+		#header{
+			position: absolute;
+			top: 0; left: 0; right: 0;
+			height: @header-height;
+			width: @header-width;
+			line-height: @header-height;
+
+			text-align: center;
+			font-size: 1.5rem;
+			text-transform: uppercase;
+
+			img {
+				width: 180px;
+				position : absolute;
+				bottom : 0;
+
+			}
+			&.thin{
+
+				height: @header-thin-height;
+			}
+		}
+
+/*------------------------------
+		WELCOME STYLES
+		------------------------------*/
+
+		#welcome{
+			position: absolute;
+			bottom: 0; left: 0; right: 0;
+			height: @welcome-height;
+			width: @welcome-width;
+			color: @white;
+
+			text-align: center;
+			font-size: 1.5rem;
+			text-transform: uppercase;
+
+
+		}
+
+/*------------------------------
+		RECIPE STYLES
+		------------------------------*/
+
+		#recipe{
+			position: absolute;
+			bottom: 0; left: 0; right: 0;
+			height: @recipe-height;
+			width: @recipe-width;
+			color: @white;
+
+			text-align: center;
+			font-size: 1.5rem;
+			text-transform: uppercase;
+
+
+		}
+
+/*------------------------------
+		THANKS STYLES
+		------------------------------*/
+
+		#thanks{
+			position: absolute;
+			bottom: 0; left: 0; right: 0;
+			height: @thanks-height;
+			width: @thanks-width;
+			color: @white;
+
+			text-align: center;
+			font-size: 1.5rem;
+			text-transform: uppercase;
+
+
+		}
+
+/*------------------------------
+		CATALOG STYLES
+		------------------------------*/
+		#catalog{
+			background: @gray;
+			.flex(@flow: column; @justify: space-around;);
+			width: @catalog-width;
+			height: @catalog-height;
+			padding-top: @header-height;
+			#help{
+				margin: 1rem 0;
+				text-align: center;
+				font-size: 2rem;
+				span{
+					display: block;
+					margin-top: 0.6rem;
+					font-size: 1rem;
+				}
+			}
+			#drinks{
+				margin: 1rem 1%;
+				.flex( @wrap: wrap; @justify: center;);
+				.drink{
+					display: block;
+					width: 33%;
+					text-align: center;
+					padding: 0;
+					img{
+						display: block;
+						margin: auto;
+						width: 100px;
+						height: 100px;
+						border-radius: 50%;
+						box-shadow: 1px 0.5px 6px rgba(0,0,0,0.3);
+					}
+					.name{
+						font-size: 1rem;
+						margin: 0.5rem;
+					}
+					.price{
+						display: block;
+						margin: 0.5rem 0.5rem 1.3rem;
+					}
+				}
+			}
+		}
+/*------------------------------
+		SPOUTS STYLES
+		------------------------------*/
+		#spouts, #serving{
+			width : @spouts-width;
+			height : @spouts-height;
+			overflow: hidden;
+			.flex( @wrap: wrap;);
+			.pos();
+
+			&::before{
+				.pos(absolute;0;0;0;0);
+				content: "";
+				display: block;
+				width: @machine-width;
+				height: @machine-height;
+				border: 2px white solid;
+				border-radius: 3rem;
+				margin: auto;
+			}
+			.spout{
+				width: 50%;
+				height: 50%;
+				.flex( @align: center;);
+				position: relative;
+				padding-top: 50 - @machine-height / 2 ;
+				padding-right: 1rem;
+				padding-left: 1rem;
+				.drink{
+					display: block;
+					width: 100px;
+					margin: 0 1rem;
+					position: relative;
+					img{
+						display: block;
+						margin: auto;
+						width: 50px;
+						height: 50px;
+						border-radius: 50%;
+					}
+					.price{
+						display: none;
+					}
+					.name{
+						position: absolute;
+						top: 100%;
+						color: white;
+						text-align: center;
+						padding: 0.5rem 0;
+						font-size: 0.8rem;
+						width: 100%;
+					}
+				}
+				& .fa{
+					display: block;
+					height: 1.5rem;
+					min-width: 1.5rem;
+					border-radius: 50%;
+					color: @blue-bg;
+					background: white;
+					text-align: center;
+					line-height: 1.5rem;
+				}
+
+				&:nth-child(odd){	padding-right: @machine-width/2;	flex-flow: row-reverse;	}
+				&:nth-child(even){	padding-left: @machine-width/2;		}
+				&:nth-child(n+3){	padding-bottom: 50 - @machine-height / 2 ;	padding-top: 0;	}
+
+				&::before{
+					background: @white;
+					border: solid 1px @white;
+					content: "";
+					display: block;
+					min-width: 35px;
+					height: 20px;
+					margin-top: -10px;
+				}
+				&.ready::before{ background: transparent; border: solid 1px white;}
+				&.busy::before{ background: white; border: solid 1px white;}
+				&.hover::before{ background: @green; border: solid 1px @green;}
+			}
+		}
+
+/*------------------------------
+		ACTIONS STYLES
+		------------------------------*/
+		#actions{
+			.flex( @flow: column; @justify: space-between;);
+			width: @actions-width;
+			height: @actions-height;
+
+			text-align: center;
+			color: white;
+			background: @dark-grey-alpha;
+
+			div{
+				width: 100%;
+				line-height: 3rem;
+
+				font-size: 1.2rem;
+				font-weight: 300;
+			}
+			#total{
+				.flex( @flow: column; @justify: center;);
+				height: 100%;
+
+				font-size: 2rem;
+
+			}
+			#confirm{
+				background: @green-disabled;
+				text-transform: uppercase;
+				&.enabled{
+					background: @green;
+				}
+			}
+		}
+
+/*------------------------------
+		PAYMENT STYLES
+		------------------------------*/
+
+		#payment{
+			.flex( @flow: column; @justify: space-between;);
+			.pos(absolute;0;0;0;0;);
+			width: 100%;
+			height: 100%;
+			padding-top: 5rem;
+			background: @blue-bg-brown;
+			color: white;
+			text-align: center;
+			&>div{
+				margin: auto;
+			}
+
+			#payment-success{
+				.pos(fixed ;0;0;auto;0;);
+				height: 4rem;
+				width: 100%;
+				line-height: 4rem;
+				font-size: 1.5rem;
+				color: @white;
+				background: @green;
+			}
+
+			#payment-help{
+				margin: 1.5rem 1rem 2rem 0;
+				text-align: center;
+				font-size: 1.6rem;
+				text-transform: uppercase;
+				span{
+					text-transform: capitalize;
+					display: block;
+					font-size: 1.5rem;
+					margin-top: 1rem;
+				}
+
+			}
+			#payment-total{
+				display: block;
+				min-height: 16rem;
+				width: 16rem;
+				border-radius: 50%;
+				border: 2px solid white;
+				.pos();
+				&::before{
+					.pos(absolute;-0.5rem;-0.5rem; -0.5rem; -0.5rem;);
+					content: "";
+					display: block;
+					border-radius: 50%;
+					border: 1px solid white;
+				}
+				.fa{
+					font-size: 4.5rem;
+					line-height: 40vw;
+				}
+				div{
+					.pos(absolute;);
+					bottom: 2.5rem;
+					width: 100%;
+					font-size: 1.5rem;
+					font-weight: 300;
+				}
+
+			}
+
+			#payment-order{
+				padding-bottom: 1rem;
+				p{
+					margin: 1rem auto;
+				}
+
+				ul{
+					width: 20vw;
+					margin: auto;
+					.flex(column; center; wrap; center;);
+					li{
+						.pos();
+						width: 100%;
+						text-transform: uppercase;
+						font-weight: 300;
+						font-size: 1.3rem;
+						margin: 0.5rem auto;
+						line-height: 1.5rem;
+						height: 1.5rem;
+						text-align: left;
+						padding-left: 1rem;
+						&:before{
+							content: "";
+							display: block;
+							height: 0.75rem;
+							width: 0.75rem;
+							border-radius: 50%;
+							background: @blue;
+							right: 100%; top: 0;
+							margin: 0.5rem;
+							line-height: 1.5rem;
+							position: absolute;
+						}
+					}
+				}
+			}
+			#payment-abort{
+				bottom: 0; left: 0;	right: 0;
+				width: 25%;
+				line-height: 2rem;
+				font-size: 1.2rem;
+				font-weight: 300;
+				height: 2rem;
+				margin: 0.5rem auto;
+				background: transparent;
+				color: white;
+				border: none;
+				font-weight: 300;
+				border-bottom: 1px solid white;
+			}
+
+			/*PAYMENT - success style*/
+			&.success{
+				#payment-total{
+					background: @green;
+					border-color: @green;
+					&::before{	border-color: @green;}
+				}
+				#payment-abort{	display:none;}
+			}
+
+			/*PAYMENT - Failed style*/
+			&.fail{
+				#payment-total{
+					background: @red;
+					border-color: @red;
+					&::before{	border-color: @red;	}
+				}
+				#payment-abort{	display:none;}
+			}
+		}
+	}
+}
+
+
+/*DRAG AND DROP - Dragged style*/
+
+.gu-mirror{
+	display: block;
+	width: 100px;
+	margin: 0 1rem;
+	position: relative;
+	img{
+		display: block;
+		margin: auto;
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+	}
+	.price, .name{
+		display: none;
+	}
+}
