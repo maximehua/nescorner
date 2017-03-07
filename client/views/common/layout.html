@@ -1,11 +1,14 @@
 <template name="layout">
 	<main id="interface" class="{{ state }}">
-		{{> header}}
-		{{> welcome}}
+		{{> header }}
 
-		{{#if $eq state "recipe"}}
-			{{> recipe}}
+		<div id="body">
+
+		{{#if $eq state "welcome"}}
+			{{> welcome}}
 		{{/if}}
+
+		{{> recipe}}
 
 		{{#if $eq state "thanks"}}
 			{{> thanks}}
@@ -16,5 +19,7 @@
 		<!-- {{#if $eq state "payment"}}
 			{{>payment}}
 		{{/if}} -->
+	</div>
+
 	</main>
 </template>

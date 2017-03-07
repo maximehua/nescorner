@@ -3,7 +3,7 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-jquery@1.11.10
+jquery
 underscore@1.0.10
 raix:handlebar-helpers
 natestrauser:animate-css
@@ -22,7 +22,6 @@ insecure@1.0.7
 msavin:mongol
 ecmascript@0.6.3
 es5-shim@4.6.15
-standard-minifier-css@1.3.3
 standard-minifier-js@1.2.2
 kadira:flow-router
 kadira:blaze-layout
@@ -35,3 +34,5 @@ numeral:numeral
 mystor:device-detection
 mongo@1.1.15
 shell-server
+semantic:ui
+juliancwirko:postcss

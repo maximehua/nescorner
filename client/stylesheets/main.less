@@ -36,34 +36,43 @@
 					}
 				}
 
+				main{
+					display: flex;
+					flex-direction: column;
+
+				}
 
 /*------------------------------
 		HEADER STYLES
 		------------------------------*/
 
 		#header{
-			position: absolute;
-			top: 0; left: 0; right: 0;
 			height: @header-height;
 			width: @header-width;
-			line-height: @header-height;
+			display: flex;
+			flex-direction: column;
+			justify-content:  -webkit-center;
 
 			text-align: center;
-			font-size: 1.5rem;
 			text-transform: uppercase;
 
 			img {
-				width: 180px;
-				position : absolute;
-				bottom : 0;
-
+				margin: auto;
+				max-width: 80%;
 			}
 			&.thin{
-
 				height: @header-thin-height;
+				img{
+					height: 100%;
+				}
+
 			}
 		}
 
+		#body{
+				width: @body-width;
+				height: 100%;
+		}
 /*------------------------------
 		WELCOME STYLES
 		------------------------------*/
@@ -97,6 +106,15 @@
 			font-size: 1.5rem;
 			text-transform: uppercase;
 
+			&.illustration{
+				height: @recipe-illustration-height;
+			}
+			&.mainrecipe{
+				height: @mainrecipe-height;
+			}
+			&.otherrecipe{
+				height: @otherrecipe-height;
+			}
 
 		}
 
