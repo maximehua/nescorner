@@ -1,28 +1,27 @@
 <template name = "mainrecipe">
-  <h2>
-    {{recipe}}
-  </h2>
-  <div class="ui card" >
+
+  	<div id="fb-root"></div>
+
+  <div class="ui card" id="bestrecipe">
   <div class="content">
-    <div class="right floated meta">14h</div>
-    <img class="ui avatar image" src="http://lorempixel.com/400/400/food"> Elliot
+    {{recipe.name}}
   </div>
-  <div class="image">
-    <img>
-  </div>
+  <div class="fb-video image"
+  data-href= "{{recipe.url}}"
+  data-width="500"
+  data-allowfullscreen="true"
+  data-autoplay="true"
+  data-show-captions="true"></div>
+  <!-- <div class="image">
+    {{{ recipe.illu }}}
+  </div> -->
   <div class="content">
-    <span class="right floated">
+    <!-- <span class="right floated">
       <i class="heart outline like icon"></i>
       17 likes
-    </span>
-    <i class="comment icon"></i>
-    3 comments
-  </div>
-  <div class="extra content">
-    <div class="ui large transparent left icon input">
-      <i class="heart outline icon"></i>
-      <input type="text" placeholder="Add Comment...">
-    </div>
+    </span> -->
+    <i class="shopping basket icon"></i>
+    {{recipe.ingNum}} ingredients
   </div>
 </div>
 </template>

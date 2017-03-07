@@ -72,6 +72,14 @@
 		#body{
 				width: @body-width;
 				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				margin: auto;
+		}
+
+		#bestrecipe{
+			margin: auto;
 		}
 /*------------------------------
 		WELCOME STYLES
@@ -110,6 +118,7 @@
 				height: @recipe-illustration-height;
 			}
 			&.mainrecipe{
+				margin: auto;
 				height: @mainrecipe-height;
 			}
 			&.otherrecipe{

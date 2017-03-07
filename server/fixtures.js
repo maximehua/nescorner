@@ -1,106 +1,29 @@
 Meteor.startup(function() {
 
-
-	if (Catalog.find().count() === 0) {
-		Catalog.insert({
-			name: 'expresso',
-			price: 0.5,
-			preview: 'c-expresso'
+	if (Recipes.find().count() === 0) {
+		Recipes.insert({
+			name : 'Crousti crémeux saumon',
+			id : "01",
+			ingredients:["Pan Crust","Cream","Mozarella","Eggs","Leak"],
+			url:"https://www.facebook.com/ChefClub.tv/videos/1408368609187748/",
 		});
-
-		Catalog.insert({
-			name: 'cappuccino',
-			price: 0.9,
-			preview: 'c-cappuccino'
+		Recipes.insert({
+			name : 'Soupe gourmande',
+			id : "02",
+			ingredients:["Bacon","Zucchini","Onions","Mozarella","Boursin"],
+			url:"https://www.facebook.com/ChefClub.tv/videos/1393093190715290/",
 		});
-
-		Catalog.insert({
-			name: 'double',
-			price: 0.9,
-			preview: 'c-double'
+		Recipes.insert({
+			name : 'Raclette revisitée',
+			id : "03",
+			ingredients:["Potatoes","Bacon Strips","Raclette","Mozarella","Boursin"],
+			url : "https://www.facebook.com/ChefClub.tv/videos/1375633615794581/",
 		});
-
-		Catalog.insert({
-			name: 'latte',
-			price: 0.9,
-			preview: 'c-latte'
+		Recipes.insert({
+			nam : 'Camembert surprise',
+			id : "04",
+			ingredients:["Pan Crust","Potatoes","Bacon","Onions","Camembert","Eggs"],
+			url : "https://www.facebook.com/ChefClub.tv/videos/1334905519867391/",
 		});
-
-		Catalog.insert({
-			name: 'chocolate',
-			price: 0.5,
-			preview: 'c-chocolate'
-		});
-
-		Catalog.insert({
-			name: 'tea',
-			price: 0.5,
-			preview: 'c-tea'
-		});
-
-	}
-	if (State.find().count() === 0) {
-
-		State.insert({
-			name : 'command',
-			command : {
-				spouts : [{
-					drink : 'none',
-					state: 'ready',
-				},
-				{
-					drink : 'none',
-					state : 'ready',
-				},
-				{
-					drink : 'none',
-					state : 'ready',
-				},
-				{
-					drink : 'none',
-					state : 'ready',
-				}],
-				order:{
-					drinks : [],
-					total : 0,
-					valid : false,
-					payment : 'pending',
-					waiting : false,
-				},
-				serving : '',
-			}
-		});
-	}
-	else{
-		State.update({name: "command"}, {
-			name : 'command',
-			command : {
-				spouts : [{
-					drink : 'none',
-					state: 'ready',
-				},
-				{
-					drink : 'none',
-					state : 'ready',
-				},
-				{
-					drink : 'none',
-					state : 'ready',
-				},
-				{
-					drink : 'none',
-					state : 'ready',
-				}],
-				order:{
-					drinks : [],
-					total : 0,
-					valid : false,
-					payment : 'pending',
-					waiting : false,
-				},
-				serving : '',
-			}
-		});
-
 	}
 })
