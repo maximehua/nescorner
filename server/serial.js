@@ -5,33 +5,33 @@ Meteor.startup(function() {
 	// 	baudrate: 38400,
 	// 	parser: SerialPort.parsers.readline('\r\n')
 	// });
-
+	//
 	// serialPort.on('open', function() {
 	// 	console.log('Port open');
 	// });
-
+	//
     // receive data
     // serialPort.on('data', Meteor.bindEnvironment(function (error, result) {
     // 	var data = error;
-
+		//
     // 	var spoutsTemp = State.findOne({name: 'command'});
     // 	spoutsTemp = spoutsTemp && spoutsTemp.command.spouts;
     // 	var payment = "pending";
-    // 	var check = data.substr( 5, 1 ); 
-    // 	var payment = data.substr( 4, 1 ); 
+    // 	var check = data.substr( 5, 1 );
+    // 	var payment = data.substr( 4, 1 );
     // 	var spouts = data.substr( 0, 4 );
     // 	var waiting = true;
-
+		//
     // 	console.log("----------------");
     // 	console.log(data);
     // 	console.log("------");
     // 	console.log("check: " + check);
-
+		//
     // 	if ( check === "y" ) {
     // 		if (payment === "2")	payment = "success";
     // 		if (payment === "0")	payment = "fail";
     // 		State.update({name: "command"}, { $set: {"command.order.payment" : payment,	}});
-
+		//
     // 		_.each(spouts, function(element,index){
     // 			switch(element){
     // 				case "1":
@@ -49,13 +49,9 @@ Meteor.startup(function() {
     // 		console.log(spoutsTemp, waiting);
     // 		State.update({name: "command"}, { $set: {"command.spouts" : spoutsTemp,	}});
     // 		State.update({name: "command"}, { $set: {"command.order.waiting" : waiting,	}});
-
+		//
     // 	}
     // }));
-
-
-    
-
 
 });
 

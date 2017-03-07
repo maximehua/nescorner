@@ -8,7 +8,9 @@
 			{{> welcome}}
 		{{/if}}
 
-		{{> recipe}}
+		{{#if $eq state "recipe"}}
+			{{> recipe}}
+		{{/if}}
 
 		{{#if $eq state "thanks"}}
 			{{> thanks}}
