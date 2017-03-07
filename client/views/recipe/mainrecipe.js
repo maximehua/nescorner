@@ -10,6 +10,7 @@ Template.mainrecipe.helpers({
 
 					return bestRecipe;
 				},
+			
 
 });
 
