@@ -52,6 +52,11 @@ Meteor.startup(function() {
 
     // 	}
     // }));
+
+
+    
+
+
 });
 
 Meteor.methods({
@@ -64,11 +69,36 @@ Meteor.methods({
 	// 	}
 	// 	return message;
 	// },
-	updateState: function (command) {
-		State.update({name: "command"}, { 
-			name: "command",
-			command : command
-		});
-		return command;
-	},
+    parsing : function(message){
+        var parsedMessage = {
+            check : false,
+            bestRecipe : "",
+            recipes : [],
+        };
+        parsedMessage.check = message.substr( message.length-1, 1 ) === "y";
+
+        if (parsedMessage.check) {
+            parsedMessage.bestRecipe = message.substr( 0, 2 );
+                        
+            t = 0;
+            var recipesNb = ( message.length - 3 ) / 2 ;
+
+            for (var i = 1; i <= recipesNb ; i++ ) {
+                var temp = message.substr( 2 * i , 2 );
+                if (temp !== parsedMessage.bestRecipe ) {   
+                    parsedMessage.recipes[t] = temp;
+                    t++;
+                }
+            }
+            console.log("update");
+            console.log(parsedMessage);
+            State.update({name: "state"}, { 
+                name: "state",
+                state : parsedMessage ,
+            });
+            console.log(State.find({name: "state"}).fetch());
+        
+        }
+        return parsedMessage;
+    },
 });

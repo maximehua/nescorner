@@ -20,10 +20,21 @@ Meteor.startup(function() {
 			url : "https://www.facebook.com/ChefClub.tv/videos/1375633615794581/",
 		});
 		Recipes.insert({
-			nam : 'Camembert surprise',
+			name : 'Camembert surprise',
 			id : "04",
 			ingredients:["Pan Crust","Potatoes","Bacon","Onions","Camembert","Eggs"],
 			url : "https://www.facebook.com/ChefClub.tv/videos/1334905519867391/",
+		});
+	}
+	if (State.find().count() === 0) {
+
+		State.insert({
+			name : "state",
+			state : {				
+				check : false,
+				bestRecipe : "",
+				recipes : [],	
+			}
 		});
 	}
 })
