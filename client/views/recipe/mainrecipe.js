@@ -1,7 +1,8 @@
 Template.mainrecipe.helpers({
 	recipe: function(){
+				var state = State.find({name: "state"}).fetch();
 
-			    var recipeId = FlowRouter.getParam("state");
+			    var recipeId = state.bestRecipe;
 					var bestRecipe = Recipes.find({id: recipeId}).fetch();
 					bestRecipe = bestRecipe[0];
 					console.log(bestRecipe);
