@@ -5,7 +5,7 @@ Meteor.startup(function() {
 			name : 'Crousti crémeux saumon',
 			id : "01",
 			ingredients:["Pan Crust","Cream","Mozarella","Eggs","Leak"],
-			illu:"/public/images/crousticremeux.jpg",
+			illu:"/images/crousticremeux.jpg",
 			url:"https://www.facebook.com/ChefClub.tv/videos/1408368609187748/",
 		});
 		Recipes.insert({
@@ -31,10 +31,10 @@ Meteor.startup(function() {
 
 		State.insert({
 			name : "state",
-			state : {				
+			state : {
 				check : false,
 				bestRecipe : "",
-				recipes : [],	
+				recipes : [],
 			}
 		});
 	}
