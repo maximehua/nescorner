@@ -79,18 +79,8 @@ refresh = function(){
 
 
 Tracker.autorun(function () {
-	var waiting = State.findOne({name: 'command'});
-	console.log(waiting);
-	if ( waiting ) {
-		console.log("waiting");
-
-		if (waiting.command.order.waiting) {
-			console.log("reset")
-			setTimeout(function(){
-				var display = $("#spouts").children().empty();
-				FlowRouter.go("/home");
-				refresh();
-			}, 2000);
-		}
-	}
+	var page = State.findOne({name: 'state'});
+	console.log(page);
+	page = page.state.page;
+	FlowRouter.go(page);
 });

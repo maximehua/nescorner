@@ -19,6 +19,17 @@
 		APP STYLES
 		------------------------------*/
 
+
+		.welcome #body{
+			margin-left: 0;
+		}
+		.recipe #body{
+			margin-left: -100vw;
+		}
+		.thanks #body{
+			margin-left: -200vw;
+		}
+
 		body{
 
 
@@ -47,6 +58,7 @@
 		------------------------------*/
 
 		#header{
+			transition: margin-left 1s ease-in-out;
 			height: @header-height;
 			width: @header-width;
 			display: flex;
@@ -70,24 +82,36 @@
 		}
 
 		#body{
-				width: @body-width;
-				height: 100%;
-				display: flex;
-				flex-direction: column;
-				justify-content: space-around;
-				margin: auto;
+			position: relative;
+			width: @body-width;
+			height: 100%;
+			display: flex;
+			flex-direction: row;
+			transition: margin-left 1s ease-in-out;
+
+
 		}
 
-		#bestrecipe{
-			margin: auto;
+		#recipe{
+			height: @recipe-height;
+			width: @recipe-width;
 		}
+		#welcome{
+			height: @welcome-height;
+			width: @welcome-width;
+		}
+		#thanks{
+			height: @thanks-height;
+			width: @thanks-width;
+		}
+
 /*------------------------------
 		WELCOME STYLES
 		------------------------------*/
 
-		#welcome{
+		#welcome>div{
 			position: absolute;
-			bottom: 0; left: 0; right: 0;
+			top: 0; left: 0; right: 0;
 			height: @welcome-height;
 			width: @welcome-width;
 			color: @white;
@@ -103,9 +127,9 @@
 		RECIPE STYLES
 		------------------------------*/
 
-		#recipe{
+		#recipe>div{
 			position: absolute;
-			bottom: 0; left: 0; right: 0;
+			top: 0; left: 0; right: 0;
 			height: @recipe-height;
 			width: @recipe-width;
 			color: @white;
@@ -127,13 +151,17 @@
 
 		}
 
+		#bestrecipe{
+			margin: auto;
+		}
+
 /*------------------------------
 		THANKS STYLES
 		------------------------------*/
 
-		#thanks{
+		#thanks>div{
 			position: absolute;
-			bottom: 0; left: 0; right: 0;
+			top: 0; left: 0; right: 0;
 			height: @thanks-height;
 			width: @thanks-width;
 			color: @white;
