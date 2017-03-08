@@ -32,7 +32,7 @@ refresh = function(){
 	// 	command.spouts[index].drink = $(element).find('.drink').data('item');
 
 	// 	if(_.isNumber($(element).find('.drink').data('price'))){
-			
+
 	// 		switch($(element).find('.drink').data('item')){
 	// 			case 'expresso':
 	// 			messageUno[index] = 1;
@@ -67,7 +67,7 @@ refresh = function(){
 	// temp.find('.remove').remove();
 	// command.serving = String(temp.html());
 	// Meteor.call('updateState',command);
-	
+
 	// messageUno[4] = 0;
 	// if (FlowRouter._current.path === '/payment') {messageUno[4] = 1;}
 	// messageUno[5] = 'z';
@@ -79,7 +79,7 @@ refresh = function(){
 
 
 Tracker.autorun(function () {
-	var page = State.findOne({name: 'state'});
+	page = State.findOne({name: 'state'});
 	console.log(page);
 	page = page.state.page;
 	FlowRouter.go(page);

@@ -58,26 +58,22 @@
 		------------------------------*/
 
 		#header{
-			transition: margin-left 1s ease-in-out;
+			transition: all 1s ease-in-out;
 			height: @header-height;
 			width: @header-width;
 			display: flex;
 			flex-direction: column;
-			justify-content:  -webkit-center;
+			justify-content:  flex-end;
 
 			text-align: center;
 			text-transform: uppercase;
 
 			img {
 				margin: auto;
-				max-width: 80%;
+				height: 100px;
 			}
 			&.thin{
 				height: @header-thin-height;
-				img{
-					height: 100%;
-				}
-
 			}
 		}
 
@@ -89,7 +85,9 @@
 			flex-direction: row;
 			transition: margin-left 1s ease-in-out;
 
-
+			&>div{
+				position: relative;
+			}
 		}
 
 		#recipe{
