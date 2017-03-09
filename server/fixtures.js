@@ -21,9 +21,21 @@ Meteor.startup(function() {
 			url : "https://www.facebook.com/ChefClub.tv/videos/1375633615794581/",
 		});
 		Recipes.insert({
-			name : 'Camembert surprise',
+			name : 'Cupcake kiri',
 			id : "04",
-			ingredients:["Pan Crust","Potatoes","Bacon","Onions","Camembert","Eggs"],
+			ingredients:["Potatoes","Bacon Strips","Onions","Grated cheese","Eggs"],
+			url : "https://www.facebook.com/ChefClub.tv/videos/1334905519867391/",
+		});
+		Recipes.insert({
+			name : 'Couronne Mediterranéenne',
+			id : "05",
+			ingredients:["Pan Crust","Pesto","Bacon","Zucchini","Tomatoes","Mozarella","Eggs"],
+			url : "https://www.facebook.com/ChefClub.tv/videos/1334905519867391/",
+		});
+		Recipes.insert({
+			name : '',
+			id : "06",
+			ingredients:["Canelloni","Parmeggiano","Ground Beef","Tomato Sauce","Onions","Tomatoes","Mozarella","Garlic"],
 			url : "https://www.facebook.com/ChefClub.tv/videos/1334905519867391/",
 		});
 	}
