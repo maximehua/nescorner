@@ -1,21 +1,21 @@
 Meteor.startup(function() {
 
-	// change the path and baudrate to match your setup
-	serialPort = new SerialPort.SerialPort('/COM9', {
-		baudrate: 9600,
-		parser: SerialPort.parsers.readline('\r\n')
-	});
-
-	serialPort.on('open', function() {
-		console.log('Port open');
-	});
-
-    // receive data
-    serialPort.on('data', Meteor.bindEnvironment(function (error, result) {
-      var data = error;
-      console.log(data);
-			Meteor.call("parsing",data);
-    }));
+	// // change the path and baudrate to match your setup
+	// serialPort = new SerialPort.SerialPort('/COM9', {
+	// 	baudrate: 9600,
+	// 	parser: SerialPort.parsers.readline('\r\n')
+	// });
+	//
+	// serialPort.on('open', function() {
+	// 	console.log('Port open');
+	// });
+	//
+    // // receive data
+    // serialPort.on('data', Meteor.bindEnvironment(function (error, result) {
+    //   var data = error;
+    //   console.log(data);
+	// 		Meteor.call("parsing",data);
+    // }));
 
 });
 
@@ -29,6 +29,13 @@ Meteor.methods({
 	// 	}
 	// 	return message;
 	// },
+	isUser : function(mail) {
+		var user = Meteor.users.findOne({"emails.address" : mail});
+		console.log(user);
+		if ( typeof user != "undefined") {
+				return true;
+		}
+	},
     parsing : function(message){
         var parsedMessage = {
             page : "/welcome",
