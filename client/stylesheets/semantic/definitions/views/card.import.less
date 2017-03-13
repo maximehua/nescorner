@@ -31,7 +31,7 @@
 
 .ui.cards > .card,
 .ui.card {
-  max-width: 100%;
+  max-width: 50vw;
   position: relative;
   display: @display;
   flex-direction: column;
@@ -49,6 +49,10 @@
 }
 .ui.card {
   margin: @margin;
+}
+
+.ui.card > .otherrecipe {
+  width: 15vw;
 }
 
 .ui.cards > .card a,
@@ -132,10 +136,19 @@
 .ui.cards > .card > .image > img,
 .ui.card > .image > img {
   display: block;
-  width: 100%;
-  height: auto;
+  width: 50vw;
+  height: 50vw;
   border-radius: inherit;
 }
+
+.ui.cards > .card > .small > .image > img,
+.ui.card > .small > .image > img {
+  display: block;
+  height: 20vw;
+  width: 20vw;
+  border-radius: inherit;
+}
+
 .ui.cards > .card > .image:not(.ui) > img,
 .ui.card > .image:not(.ui) > img {
   border: @imageBorder;

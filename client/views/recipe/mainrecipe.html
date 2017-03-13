@@ -1,27 +1,16 @@
 <template name = "mainrecipe">
-
-  	<!-- <div id="fb-root"></div> -->
-
+  <div id="recipe" class="mainrecipe">
   <div class="ui card" id="bestrecipe">
-  <div class="content">
-    {{recipe.name}}
-  </div>
-  <!-- <div class="fb-video image"
-  data-href= "{{recipe.url}}"
-  data-width="500"
-  data-allowfullscreen="true"
-  data-autoplay="true"
-  data-show-captions="true"></div> -->
-  <div class="image">
-    <img src="{{ recipe.illu }}">
-  </div>
-  <div class="content">
-    <!-- <span class="right floated">
-      <i class="heart outline like icon"></i>
-      17 likes
-    </span> -->
+    <div class="content">
+      {{recipe.name}}
+    </div>
+    <div class="image">
+      <img src="{{ recipe.illu }}">
+    </div>
+    <div class="content">
     <i class="shopping basket icon"></i>
-    {{recipe.ingNum}} ingredients
+      {{recipe.ingNum}} ingredients
+    </div>
   </div>
 </div>
 </template>

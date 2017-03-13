@@ -69,7 +69,7 @@
 
 			img {
 				margin: auto;
-				height: 100px;
+				height: 15vh;
 			}
 			&.thin{
 				height: @header-thin-height;
@@ -151,15 +151,14 @@
 			text-align: center;
 			text-transform: uppercase;
 
-			&.illustration{
-				height: @recipe-illustration-height;
-			}
 			&.mainrecipe{
 				margin: auto;
-				height: @mainrecipe-height;
+				position:relative;
+				min-height: @mainrecipe-height;
 			}
 			&.otherrecipe{
-				height: @otherrecipe-height;
+				font-size: 1vw;
+				position: relative;
 			}
 
 		}
@@ -173,14 +172,25 @@
 		------------------------------*/
 
 		#thanks>div{
+
 			position: absolute;
 			top: 0; left: 0; right: 0;
-			height: @thanks-height;
+			min-height: @thanks-height;
 			width: @thanks-width;
 			color: @white;
+			margin-left: auto;
+			margin-right: auto;
 
 			text-align: center;
 			text-transform: uppercase;
+
+			&.form{
+				width: @thanks-form-width;
+				height : @thanks-form-height;
+				position :relative;
+				margin-left: auto;
+				margin-right: auto;
+			}
 
 
 		}
