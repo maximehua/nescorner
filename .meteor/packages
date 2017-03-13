@@ -3,7 +3,6 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-jquery
 underscore@1.0.10
 raix:handlebar-helpers
 natestrauser:animate-css
@@ -29,14 +28,15 @@ ahref:dragula
 fourquet:serialport
 meyerweb-reset@1.0.7
 fortawesome:fontawesome
-flemay:less-autoprefixer
 numeral:numeral
 mystor:device-detection
 mongo@1.1.15
 shell-server
-semantic:ui
-juliancwirko:postcss
 email
 accounts-base
 accounts-password
 accounts-ui
+semantic:ui
+juliancwirko:postcss
+less
+jquery
