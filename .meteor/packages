@@ -17,8 +17,8 @@ tracker@1.1.2
 logging@1.1.17
 spacebars
 check@1.2.4
-autopublish@1.0.7
-insecure@1.0.7
+autopublish
+insecure
 msavin:mongol
 ecmascript@0.6.3
 es5-shim@4.6.15
@@ -37,3 +37,6 @@ shell-server
 semantic:ui
 juliancwirko:postcss
 email
+accounts-base
+accounts-password
+accounts-ui

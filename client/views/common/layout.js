@@ -1,4 +1,4 @@
-Template.layout.helpers({
+ Template.layout.helpers({
 	state: function(){
 		var state = FlowRouter.getParam("state");
 		return state && state;
