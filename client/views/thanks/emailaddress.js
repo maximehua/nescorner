@@ -2,14 +2,30 @@ Template.emailaddress.events({
      'click .ui button': function(){
 
        console.log("You clicked a .ui button element");
-       var answer = $('#formmail').form('get values');
+       var email = document.getElementByID("email").value;
+       console.log(email);
 
        Meteor.call('sendEmail',
-            'answer.email-address',
+            'email',
             'contact@nescorner.com',
             'Hello from Nescorner!',
             'This is a test of Email.send.');
+     },
 
-     }
+     'refresh':function(){
+       time--;
 
+       if (time > 1)
+       {
+        spanTime.innerHTML+= 's';
+       }
+
+       else if (time==0)
+       {
+        window.location='../../';
+        clearInterval();
+       }
+     },
+
+      setInterval(refresh,1000)
 });

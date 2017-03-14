@@ -181,7 +181,7 @@ Meteor.startup(function() {
 			id : "26",
 			ingredients: ["Rice","Chicken","Tomato sauce","Onions","Garlic","Mushrooms","Pepper Bell","Bouquetgarni"],
 			url : "vide",
-			illu : "PouletBasquaise.jpg",
+			illu : "/images/PouletBasquaise.jpg",
 		});
 		Recipes.insert({
 			name : 'PATES FORESTIÈRE',
