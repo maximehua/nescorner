@@ -3,22 +3,22 @@ Meteor.startup(function() {
 
 	//change the path and baudrate to match your setup
 
-	serialPort = new SerialPort.SerialPort('/COM9', {
-		baudrate: 9600,
-		parser: SerialPort.parsers.readline('\r\n')
-	});
-
-	serialPort.on('open', function() {
-		console.log('Port open');
-	});
-
-
-    // receive data
-    serialPort.on('data', Meteor.bindEnvironment(function (error, result) {
-      var data = error;
-      console.log(data);
-			Meteor.call("parsing",data);
-    }));
+	// serialPort = new SerialPort.SerialPort('/COM9', {
+	// 	baudrate: 9600,
+	// 	parser: SerialPort.parsers.readline('\r\n')
+	// });
+	//
+	// serialPort.on('open', function() {
+	// 	console.log('Port open');
+	// });
+	//
+	//
+  //   // receive data
+  //   serialPort.on('data', Meteor.bindEnvironment(function (error, result) {
+  //     var data = error;
+  //     console.log(data);
+	// 		Meteor.call("parsing",data);
+  //   }));
 
 
 });
