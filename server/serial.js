@@ -1,5 +1,8 @@
 Meteor.startup(function() {
 
+	process.env.MAIL_URL = "postmaster%40sandbox609ac264f0334181990788f633d62ee5.mailgun.org:7c82cdc2c07d7d6f9721a7e156c0472f@smtp.mailgun.org:587";
+
+
 
 	//change the path and baudrate to match your setup
 
@@ -24,6 +27,7 @@ Meteor.startup(function() {
 });
 
 Meteor.methods({
+
 	// sendToSerialPort: function (message) {
 	// 	for (var i = 0; i <= 3; i++) {
 	// 		setTimeout(function(){

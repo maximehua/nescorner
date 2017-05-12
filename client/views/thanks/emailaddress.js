@@ -1,33 +1,18 @@
 Template.emailaddress.events({
-     'click .ui button': function(){
-
+     'click .ui button': function(event){
+       event.preventDefault();
        console.log("You clicked a .ui button element");
-       var email = document.getElementByID("email").value;
+       var email = $("#email").value;
        console.log(email);
 
        Meteor.call('sendEmail',
             'email',
             'contact@nescorner.com',
             'Hello from Nescorner!',
-            'This is a test of Email.send.');
+            'This is a test of Email.send.'
+          );
+
+      Meteor.setTimeout(function(){Meteor.call("parsing","0y");}, 500)
      }
 
-    //  ,
-     //
-    //  'refresh':function(){
-    //    time--;
-     //
-    //    if (time > 1)
-    //    {
-    //     spanTime.innerHTML+= 's';
-    //    }
-     //
-    //    else if (time==0)
-    //    {
-     //
-    //     clearInterval();
-    //    }
-    //  },
-     //
-    //   setInterval(refresh,1000)
 });
